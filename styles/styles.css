@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #f0f8ff; /* Custom background color (light blue) */
+}
+section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content sections */
+    border-radius: 8px; /* Optional: Rounded corners for sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow around sections */
+}
+h1, h2 {
+    color: #333333; /* Darker text color for headings */
+}
+a {
+    color: #0077cc; /* Custom link color */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; /* Underline links when hovered */
+}

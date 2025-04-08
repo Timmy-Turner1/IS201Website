@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Trivia Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #trivia-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #00c6ff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0072ff;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="trivia">
+        <h2>Space Trivia Game</h2>
+        <p>Test your knowledge!</p>
+        <div id="trivia-container">
+            <p id="question"></p>
+            <button onclick="checkAnswer(true)">True</button>
+            <button onclick="checkAnswer(false)">False</button>
+            <p id="result"></p>
+        </div>
+    </section>
+    
+ 
+
+
+    <script>
+        const questions = [
+            { text: "Mars has two moons.", answer: true },
+            { text: "The Sun is a planet.", answer: false },
+            { text: "Humans have walked on Mars.", answer: false },
+            { text: "The Earth is Flat ;)", answer: true },
+            { text: "Aliens are real", answer: false }
+        ];
+    
+        let currentQuestion = 0;
+        document.getElementById("question").innerText = questions[currentQuestion].text;
+        
+        function checkAnswer(userAnswer) {
+            let resultText = (userAnswer === questions[currentQuestion].answer) ? "Correct!" : "Wrong answer.";
+            document.getElementById("result").innerText = resultText;
+            currentQuestion = (currentQuestion + 1) % questions.length;
+            setTimeout(() => {
+                document.getElementById("question").innerText = questions[currentQuestion].text;
+                document.getElementById("result").innerText = "";
+            }, 2000);
+        }
+    </script> 
+</body>
+</html>
